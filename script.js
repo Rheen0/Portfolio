@@ -35,7 +35,6 @@ educationalbg.forEach(box => {
             start: 'top center',
             end: 'top',
             scrub: true,
-            markers: true
 
         }
     })
