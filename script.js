@@ -32,15 +32,16 @@ educationalbg.forEach(box => {
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: box,
-            start: 'top bottom',
-            end: 'bottom 90%',
+            start: 'top center',
+            end: 'top',
             scrub: true,
+            markers: true
 
         }
     })
 
-    tl.fromTo(descriptionLeft, { xPercent: -100, opacity: 0 }, { xPercent: 0, opacity: 1, ease: "Power2.easeOut" });
-    tl.fromTo(descriptionRight, { xPercent: 100, opacity: 0 }, { xPercent: 0, opacity: 1, ease: "Power2.easeOut" }, '<');
+    tl.fromTo(descriptionLeft, { xPercent: -100, opacity: 0 }, { xPercent: 0, opacity: 1, ease: "Power2.easeOut", duration: 1 });
+    tl.fromTo(descriptionRight, { xPercent: 100, opacity: 0 }, { xPercent: 0, opacity: 1, ease: "Power2.easeOut", duration: 1 }, '<');
 
 
 })
@@ -75,8 +76,9 @@ const lineAnimation = gsap.timeline({
     scrollTrigger: {
         trigger: "#education",
         start: "top center",
-        end: "bottom",
+        end: "top",
         scrub: 1,
+
 
     },
 });

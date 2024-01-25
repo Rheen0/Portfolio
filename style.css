@@ -68,6 +68,7 @@ nav li {
 }
 
 nav li a {
+    letter-spacing: 0.1em;
     text-decoration: none;
     transition: 0.3s color;
 
@@ -131,6 +132,7 @@ header {
 
 
 #education {
+    /* border: 2px solid blue; */
     position: relative;
     height: 100%;
 
@@ -161,6 +163,7 @@ header {
 }
 
 .education-box {
+    padding: 7.5%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -172,13 +175,19 @@ header {
     letter-spacing: 0.1em;
 }
 
+.description-right {
+    text-align: right;
+}
+
 #contact {
-    border: 1px solid red;
+
+    /* border: 1px solid red; */
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
 
 }
 
@@ -234,6 +243,7 @@ header {
 
 /* Footer */
 footer {
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
