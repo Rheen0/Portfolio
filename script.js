@@ -1,5 +1,4 @@
 
-// Typewriter Animation
 const words = ['Frontend Web Developer', 'UI/UX Designer'];
 
 
@@ -22,98 +21,71 @@ words.forEach(word => {
     mainTimeline.add(textTimeline)
 })
 
-// Education Background Animation
-const educationalbg = document.querySelectorAll('.education-box');
 
-educationalbg.forEach(box => {
-    let descriptionLeft = box.querySelector('.description-left');
-    let descriptionRight = box.querySelector('.description-right');
-
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: box,
-            start: 'top center',
-            end: 'top',
-            scrub: true,
-
-        }
-    })
-
-    tl.fromTo(descriptionLeft, { xPercent: -100, opacity: 0 }, { xPercent: 0, opacity: 1, ease: "Power2.easeOut", duration: 1 });
-    tl.fromTo(descriptionRight, { xPercent: 100, opacity: 0 }, { xPercent: 0, opacity: 1, ease: "Power2.easeOut", duration: 1 }, '<');
+let typewriterText = "About me";
 
 
-})
-
-
-// Start of reveal animation
-const reveal = gsap.utils.toArray('.reveal');
-reveal.forEach((text, i) => {
-    ScrollTrigger.create({
-        trigger: text,
-        toggleClass: 'active',
-        start: "top 90%",
-        end: "top 20%",
-        // markers: true,
-    })
-})
-
-const images = gsap.utils.toArray('img');
-images.forEach((img, i) => {
-    ScrollTrigger.create({
-        trigger: img,
-        toggleClass: 'active',
-        start: "top 90%",
-        end: "top 20%",
-        // markers: true,
-    })
-})
-
-
-
-// End of reveal animation
-
-
-
-
-// // Projects Animation
-// const projects = document.querySelectorAll('.project');
-
-// projects.forEach(project => {
-//     let projectDescription = project.querySelector('.description');
-//     let projectMedia = project.querySelector('.media');
-
-//     let tl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: project,
-//             start: 'top bottom',
-//             end: 'bottom 90%',
-//             scrub: true,
-
-//         }
-//     })
-
-//     tl.fromTo(projectDescription, { xPercent: -100, opacity: 0 }, { xPercent: 0, opacity: 1, ease: "Power2.easeOut" });
-//     tl.fromTo(projectMedia, { xPercent: 100, opacity: 0 }, { xPercent: 0, opacity: 1, ease: "Power2.easeOut" }, '<');
-//     tl.to(projectMedia, { y: -75 }, '<');
-
-// })
-
-// Line Animation
-
-const lineAnimation = gsap.timeline({
+let typewriterTimeline = gsap.timeline({
     scrollTrigger: {
-        trigger: "#education",
-        start: "top center",
-
-        scrub: 1,
-
-
+        trigger: "#about-me",
+        start: "top 90%",
+        end: "top 20%",
+        // markers: true,       
+        toggleActions: "play none none reverse"
     },
+
 });
 
-// Add the animation to draw the line
-lineAnimation.to(".line", { height: "100%", duration: 1 });
+typewriterTimeline.to('#uniqueTypewriter', {
+    text: typewriterText,
+    duration: 1,
+    ease: "none"
+});
+
+// 
+
+let projectTypewriterText = "Projects";
+
+
+let projectsTypewriterTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#projects",
+        start: "top 90%",
+        end: "top 20%",
+        // markers: true,          
+        toggleActions: "play none none reverse"
+    },
+
+});
+
+
+projectsTypewriterTimeline.to('#projectsTypewriter', {
+    text: projectTypewriterText,
+    duration: 1,
+    ease: "none"
+});
+
+
+
+
+const elements = document.querySelectorAll('.leadership-experience');
+
+elements.forEach((element) => {
+    gsap.from(element, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "top 20%",
+            toggleActions: "play reverse play reverse",
+
+        }
+    });
+});
+
+// End
 
 
 

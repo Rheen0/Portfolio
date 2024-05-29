@@ -10,6 +10,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* border: 1px solid red; */
 }
 
 /* Texts */
@@ -38,6 +39,8 @@ body {
 }
 
 header {
+    height: 100vh;
+    width: 100%;
     padding: 10vh;
     /* border: 2px solid green; */
 }
@@ -147,14 +150,17 @@ main .reveal {
     transform: scaleX(0);
     transition: 0.5s;
     transition-delay: 0.5s;
+    width: 25vh;
 }
 
 main .reveal.active {
+    color: var(--header-color);
     transform: scaleX(1);
     transition-delay: 0s;
 }
 
 main .reveal:nth-child(2) {
+    color: var(--text-color);
     font-weight: 300;
     font-size: 1.5em;
     letter-spacing: 2px;
@@ -184,14 +190,23 @@ main .reveal.active:before {
     transition-delay: 0.5s;
 }
 
+img {
+    filter: saturate(0);
+    transition: 0.5s;
+}
+
+img:hover {
+    filter: saturate(1);
+}
+
 .section-reveal img {
     position: relative;
     Left: -100px;
     display: block;
     margin-left: 10px;
-    margin-top: 20px;
-    max-width: 300px;
-    filter: saturate(0);
+    max-height: 500px;
+    max-width: 500px;
+
     opacity: 0;
     transition: 0.5s;
 }
@@ -199,20 +214,76 @@ main .reveal.active:before {
 .section-reveal img.active {
     Left: 0;
     opacity: 1;
-    filter: saturate(1);
 }
 
 .section-reveal {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+
 }
 
 
+
+.section-wrapper {
+    display: flex;
+}
+
+
+
+#about-me {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+
+#projects {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#projects h1 {
+    font-size: 75px;
+    margin-bottom: 60px;
+}
+
+#about-me h1 {
+    font-size: 75px;
+    margin-bottom: 60px;
+}
+
+#about-me p {
+    font-size: 1.5em;
+}
+
+.description {
+
+    width: 50%;
+    height: 100%;
+    margin-left: 25px;
+}
+
+.description p {
+    font-size: 1em;
+}
+
+.leadership-experience {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -224,10 +295,6 @@ main .reveal.active:before {
 
 
 /* Main Content */
-#projects {
-    /* border: 1px solid blue; */
-    height: 100%;
-}
 
 
 #education {
@@ -326,7 +393,7 @@ main .reveal.active:before {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* or 'contain', depending on your preference */
+
 }
 
 .media:hover {
@@ -340,9 +407,19 @@ main .reveal.active:before {
     justify-content: center;
 }
 
+.project-list {
+    display: flex;
+}
+
+.project-list img {
+    margin: 0 5vh 0 5vh;
+    height: 25vh;
+    width: 25vh;
+}
+
 /* Footer */
 footer {
-    height: 50vh;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
