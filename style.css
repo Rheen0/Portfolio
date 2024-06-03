@@ -92,13 +92,20 @@ header {
     flex-direction: column;
 }
 
+.header-section p {
+    text-align: center;
+}
+
 .header-section h1 {
-    font-size: 75px;
-    margin-bottom: 60px;
+    font-size: 5rem;
+    /* converted from 75px */
+    margin-bottom: 4rem;
+    /* converted from 60px */
 }
 
 .header-section ul {
-    margin-top: 40px;
+    margin-top: 2.5rem;
+    /* converted from 40px */
 }
 
 .header-section li {
@@ -111,7 +118,8 @@ header {
     content: '';
     height: 1px;
     width: 1.5rem;
-    margin: 0 10px 0 10px;
+    margin: 0 0.625rem 0 0.625rem;
+    /* converted from 10px */
     display: inline-block;
     background-color: var(--text-color);
 }
@@ -123,7 +131,8 @@ header {
 }
 
 .scroll-down {
-    bottom: 150px;
+    bottom: 9.375rem;
+    /* converted from 150px */
     position: absolute;
 }
 
@@ -144,8 +153,10 @@ main {
 main .reveal {
     position: relative;
     color: #fff;
-    font-size: 2.5em;
-    padding: 0 10px;
+    font-size: 2.5rem;
+    /* converted from 40px */
+    padding: 0 0.625rem;
+    /* converted from 10px */
     transform-origin: left;
     transform: scaleX(0);
     transition: 0.5s;
@@ -162,9 +173,12 @@ main .reveal.active {
 main .reveal:nth-child(2) {
     color: var(--text-color);
     font-weight: 300;
-    font-size: 1.5em;
-    letter-spacing: 2px;
-    margin-top: 5px;
+    font-size: 1.5rem;
+    /* converted from 24px */
+    letter-spacing: 0.125rem;
+    /* converted from 2px */
+    margin-top: 0.3125rem;
+    /* converted from 5px */
     display: inline-block;
 }
 
@@ -201,18 +215,20 @@ img:hover {
 
 .section-reveal img {
     position: relative;
-    Left: -100px;
+    left: -100px;
     display: block;
     margin-left: 10px;
-    max-height: 500px;
-    max-width: 500px;
+    max-height: 31.25rem;
+    /* converted from 500px */
+    max-width: 31.25rem;
+    /* converted from 500px */
 
     opacity: 0;
     transition: 0.5s;
 }
 
 .section-reveal img.active {
-    Left: 0;
+    left: 0;
     opacity: 1;
 }
 
@@ -254,37 +270,53 @@ img:hover {
 }
 
 #projects h1 {
-    font-size: 75px;
-    margin-bottom: 60px;
+    font-size: 5rem;
+    /* converted from 75px */
+    margin-bottom: 4rem;
+    /* converted from 60px */
 }
 
 #about-me h1 {
-    font-size: 75px;
-    margin-bottom: 60px;
+    font-size: 5rem;
+    /* converted from 75px */
+    margin-bottom: 4rem;
+    /* converted from 60px */
 }
 
 #about-me p {
-    font-size: 1.5em;
+    font-size: 1rem;
+    width: 50vh;
+    text-align: center;
+    /* converted from 24px */
 }
 
 .description {
 
     width: 50%;
     height: 100%;
-    margin-left: 25px;
+    margin-left: 1.5625rem;
+    /* converted from 25px */
 }
 
 .description p {
-    font-size: 1em;
+    font-size: 1rem;
+    text-align: justify;
+    /* converted from 16px */
 }
 
 .leadership-experience {
-    margin-top: 60px;
+    margin-top: 4rem;
+    margin-bottom: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.leadership-experience img {
+    max-width: 100%;
+    height: auto;
+
+}
 
 
 /* End of Reveal */
@@ -321,7 +353,8 @@ img:hover {
 
 .project {
     height: 100vh;
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
+    /* converted from 50px */
     /* border: 2px solid red; */
     display: flex;
     align-items: center;
@@ -380,8 +413,10 @@ img:hover {
 }
 
 .media {
-    height: 560px;
-    width: 560px;
+    height: 35rem;
+    /* converted from 560px */
+    width: 35rem;
+    /* converted from 560px */
     cursor: pointer;
     filter: saturate(0);
     transition: 0.3s filter;
@@ -412,14 +447,18 @@ img:hover {
 }
 
 .project-list img {
-    margin: 0 5vh 0 5vh;
-    height: 25vh;
-    width: 25vh;
+    margin: 0 3.125rem 0 3.125rem;
+    /* converted from 50px */
+    height: 16.25rem;
+    /* converted from 260px */
+    width: 16.25rem;
+    /* converted from 260px */
 }
 
 /* Footer */
 footer {
-    height: 5vh;
+    height: 3.125rem;
+    /* converted from 50px */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -439,24 +478,95 @@ nav li a:hover {
     color: var(--text-bright);
 }
 
-/* Scroll */
+/* Responsive */
 
-html.lenis {
-    height: auto;
+@media (max-width: 1024px) {
+    .header-section h1 {
+        font-size: 3.125rem;
+        /* converted from 50px */
+    }
+
+    .header-section p {
+        font-size: 1.2rem;
+        /* assuming slightly bigger than base */
+    }
+
+    #about-me h1 {
+        font-size: 3.125rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 1vh 0;
+    }
+
+    .description {
+        width: 80%;
+        margin-left: 0;
+    }
+
+    .leadership-experience {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-list img {
+        height: 12.5rem;
+        /* converted from 200px */
+        width: 12.5rem;
+        /* converted from 200px */
+    }
+
+
+
+    #header img {
+        display: none;
+    }
+
+    #header ul {
+        display: none;
+    }
 }
 
-.lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-}
+@media (max-width: 768px) {
+    .header-section h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        /* converted from 40px */
+    }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-}
+    .header-section p {
+        font-size: 1rem;
 
-.lenis.lenis-stopped {
-    overflow: hidden;
-}
+        /* converted from 16px */
+    }
 
-.lenis.lenis-scrolling iframe {
-    pointer-events: none;
+    #about-me h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    #about-me p {
+
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #header img {
+        display: none;
+    }
+
+    #header ul {
+        display: none;
+    }
+
+    .leadership-experience {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 4rem;
+        /* Adjust the bottom margin for smaller screens */
+    }
 }

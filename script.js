@@ -21,69 +21,61 @@ words.forEach(word => {
     mainTimeline.add(textTimeline)
 })
 
-
-let typewriterText = "About me";
-
-
-let typewriterTimeline = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#about-me",
-        start: "top 90%",
-        end: "top 20%",
-        // markers: true,       
-        toggleActions: "play none none reverse"
+// Responsive ScrollTrigger Animations
+ScrollTrigger.matchMedia({
+    // Desktop
+    "(min-width: 1024px)": function () {
+        document.querySelectorAll('.leadership-experience').forEach((element) => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    end: "top 20%",
+                    // markers: true,
+                    toggleActions: "play reverse play reverse",
+                }
+            });
+        });
     },
-
-});
-
-typewriterTimeline.to('#uniqueTypewriter', {
-    text: typewriterText,
-    duration: 1,
-    ease: "none"
-});
-
-// 
-
-let projectTypewriterText = "Projects";
-
-
-let projectsTypewriterTimeline = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#projects",
-        start: "top 90%",
-        end: "top 20%",
-        // markers: true,          
-        toggleActions: "play none none reverse"
+    // Tablet
+    "(min-width: 768px) and (max-width: 1023px)": function () {
+        document.querySelectorAll('.leadership-experience').forEach((element) => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    end: "bottom 15%",
+                    // markers: true,
+                    toggleActions: "play reverse play reverse",
+                }
+            });
+        });
     },
-
+    // Mobile
+    "(max-width: 767px)": function () {
+        document.querySelectorAll('.leadership-experience').forEach((element) => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 90%",
+                    end: "bottom 20%",
+                    // markers: true,
+                    toggleActions: "play reverse play reverse",
+                }
+            });
+        });
+    }
 });
 
-
-projectsTypewriterTimeline.to('#projectsTypewriter', {
-    text: projectTypewriterText,
-    duration: 1,
-    ease: "none"
-});
-
-
-
-
-const elements = document.querySelectorAll('.leadership-experience');
-
-elements.forEach((element) => {
-    gsap.from(element, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play reverse play reverse",
-
-        }
-    });
-});
 
 // End
 
